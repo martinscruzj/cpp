@@ -1,8 +1,25 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(LinkedList LANGUAGES CXX)
+set(PROJECT_NAME LinkedListLibrary)
+set(LIBRARY_NAME LinkedList)
+set(LIBRARY_HEADERS_DIR include/${LIBRARY_NAME})
+set(LIBRARY_HEADERS ${LIBRARY_HEADERS_DIR}/linkedlist.hpp)
+set(LIBRARY_SOURCE_DIR src)
+set(LIBRARY_SOURCE ${LIBRARY_SOURCE_DIR}/linkedlist.cpp)
+
+project(${PROJECT_NAME} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(LinkedList main.cpp linkedlist.cpp linkedlist.h node.h)
+add_library(${LIBRARY_NAME} STATIC ${LIBRARY_HEADERS} ${LIBRARY_SOURCE})
+target_include_directories(${LIBRARY_NAME} PRIVATE
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/${LIBRARY_NAME}>
+   $<INSTALL_INTERFACE:include/${LIBRARY_NAME}>
+)
+target_include_directories(${LIBRARY_NAME} PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+   $<INSTALL_INTERFACE:include>
+)
+
+add_subdirectory(test)
