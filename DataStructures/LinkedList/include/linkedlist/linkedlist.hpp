@@ -1,10 +1,11 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef LINKEDLIST_HPP
+#define LINKEDLIST_HPP
 
-#include "node.h"
 #include <iostream>
 
 using namespace std;
+
+struct Node;
 
 class LinkedList
 {
@@ -27,4 +28,4 @@ private:
     static bool Equal(int a, int b);
 };
 
-#endif // LINKEDLIST_H
+#endif // LINKEDLIST_HPP

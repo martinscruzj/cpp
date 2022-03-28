@@ -1,4 +1,4 @@
-cmake_minimum_required(version 3.5)
+cmake_minimum_required(VERSION 3.14)
 
 set(TEST_PROJECT_NAME LinkedListTests)
 set(LIBRARY_TESTS_SOURCE linkedlisttests.cpp)

@@ -1,5 +1,5 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef NODE_HPP
+#define NODE_HPP
 
 struct Node
 {
@@ -7,4 +7,4 @@ struct Node
     Node* next;
 };
 
-#endif // NODE_H
+#endif // NODE_HPP

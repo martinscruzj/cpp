@@ -1,14 +1,16 @@
-#include "linkedlist.h"
+#include "linkedlist/linkedlist.hpp"
 #include <iostream>
+#include <gtest/gtest.h>
 
 using namespace std;
 
 bool equal(int a, int b);
 bool lessthan(int a, int b);
 
-int main()
+int main(int argc, char** argv)
 {
     LinkedList list;
+    testing::InitGoogleTest(&argc, argv);
     cout << "Just created list contents: " << list << endl;
     cout << "Is 100 contained in list? " << (list.Find(100)?"yes":"no") << endl;
     cout << "Remove 100 from list" << endl;
@@ -147,7 +149,7 @@ int main()
     cout << "Remove 100 from list" << endl;
     list.Remove(100);
 
-    return 0;
+    return RUN_ALL_TESTS();
 }
 
 bool equal(int a, int b)

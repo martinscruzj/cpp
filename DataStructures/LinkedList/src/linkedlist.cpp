@@ -1,4 +1,5 @@
-#include "linkedlist.h"
+#include "linkedlist.hpp"
+#include "node.hpp"
 
 LinkedList::LinkedList()
     : head(nullptr)
