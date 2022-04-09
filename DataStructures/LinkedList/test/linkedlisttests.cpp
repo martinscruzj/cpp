@@ -7,7 +7,12 @@ using namespace std;
 bool equal(int a, int b);
 bool lessthan(int a, int b);
 
-int main(int argc, char** argv)
+TEST(LinkedListTests, BasicAssertions) {
+  EXPECT_STRNE("hello", "world");
+  EXPECT_EQ(7 * 6, 42);
+}
+
+/*int main(int argc, char** argv)
 {
     LinkedList list;
     testing::InitGoogleTest(&argc, argv);
@@ -150,7 +155,7 @@ int main(int argc, char** argv)
     list.Remove(100);
 
     return RUN_ALL_TESTS();
-}
+}*/
 
 bool equal(int a, int b)
 {
